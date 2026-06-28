@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/balancecard.tsx","./src/components/connectpanel.tsx","./src/components/sendform.tsx","./src/components/txfeedback.tsx","./src/hooks/usewallet.ts","./src/lib/format.ts","./src/lib/freighter.ts","./src/lib/network.ts","./src/lib/stellar.ts","./vite.config.ts"],"version":"5.9.3"}
