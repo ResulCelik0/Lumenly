@@ -47,7 +47,7 @@ npm audit            # → found 0 vulnerabilities
 | Hardcoded secrets / private keys / seeds / API keys | ✅ None |
 | `eval` / `new Function` / `document.write` | ✅ None |
 | `dangerouslySetInnerHTML` / raw `innerHTML` | ✅ None |
-| Secrets in `localStorage` / `sessionStorage` | ✅ Not used at all |
+| Secrets in `localStorage` / `sessionStorage` | ✅ No secrets. Only a non-sensitive session record (the **public** address under `lumenly:session`) is stored to persist connect/disconnect across refreshes |
 | `target="_blank"` without `rel="noreferrer"` | ✅ All 4 links protected |
 | Plain-HTTP endpoints | ✅ All API calls use HTTPS (Horizon + Friendbot) |
 | Input validation | ✅ Destination validated via `StrKey.isValidEd25519PublicKey`; amount must be > 0; self-pay blocked |

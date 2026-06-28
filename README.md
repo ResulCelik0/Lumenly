@@ -185,8 +185,10 @@ src/
 ## ⚠️ Notes
 
 - This app is **Testnet only**. Testnet XLM has no monetary value.
-- Freighter has no programmatic "revoke"; **Disconnect** clears the dApp session.
-  To fully de-authorise, remove the app inside the Freighter extension.
+- Freighter has no programmatic "revoke"; **Disconnect** clears the dApp session
+  and is **remembered across page refreshes** (so it won't silently reconnect).
+  Clicking **Connect** again restores the session. To fully de-authorise, remove
+  the app inside the Freighter extension.
 
 ---
 
