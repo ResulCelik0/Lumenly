@@ -1,0 +1,17 @@
+node_modules
+dist
+.git
+.gitignore
+.github
+.DS_Store
+*.log
+npm-debug.log*
+docs/screenshots/*.png
+.env
+.env.*
+.vscode
+.idea
+README.md
+SECURITY.md
+Makefile
+docker-compose.yml

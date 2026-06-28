@@ -79,6 +79,33 @@ Then open the printed URL (default **http://localhost:5173**).
 
 ---
 
+## 🐳 Run with Docker + Make
+
+The project ships with a hardened, multi-stage Docker image (rootless nginx) and
+a `Makefile` of shortcuts. Run `make` to see every target.
+
+```bash
+make up        # build + run the production container → http://localhost:8080
+make dev       # Vite dev server with hot reload in Docker → http://localhost:5173
+make logs      # tail logs
+make headers   # verify the live security headers
+make down      # stop everything
+make clean     # remove containers, image and dist/
+```
+
+| Target | What it does |
+| --- | --- |
+| `make up` / `make down` / `make restart` | Production container lifecycle (nginx on `:8080`) |
+| `make dev` | Hot-reloading dev server in Docker (`:5173`) |
+| `make dev-local` / `make build-local` / `make lint` | Run on the host without Docker |
+| `make audit` / `make scan` / `make headers` | Security: npm audit, Trivy image scan, header check |
+
+The production container runs **rootless, read-only, with all Linux capabilities
+dropped**, and serves a strict Content-Security-Policy plus a full set of security
+headers. See **[SECURITY.md](SECURITY.md)** for the full audit and threat model.
+
+---
+
 ## 📖 How to use
 
 1. **Connect** — click **Connect Freighter** and approve the popup.
