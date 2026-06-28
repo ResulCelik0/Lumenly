@@ -1,6 +1,6 @@
 # 🔐 Security Overview & Audit
 
-This document records the security posture of **Stellar Pay**, the controls that
+This document records the security posture of **Lumenly**, the controls that
 are in place, and the residual risks. It covers both the **application code** and
 the **container/serving infrastructure**.
 
@@ -13,7 +13,7 @@ the **container/serving infrastructure**.
 
 ## 1. Threat model
 
-Stellar Pay is a **non-custodial** front-end dApp. The most important security
+Lumenly is a **non-custodial** front-end dApp. The most important security
 property is that **it never has access to the user's secret key** — all signing
 happens inside the Freighter extension. That removes the highest-impact class of
 risk (key theft) from the app itself.
@@ -67,7 +67,7 @@ npm audit            # → found 0 vulnerabilities
 - **Multi-stage build** — Node is only used to compile; the runtime image is a
   minimal nginx that ships *only* static files (no Node, no source, no dev deps).
 - **Rootless** — runs as `nginx` (uid 101) via `nginxinc/nginx-unprivileged`,
-  listening on `:8080`. Verified: `docker exec stellar-pay id → uid=101(nginx)`.
+  listening on `:8080`. Verified: `docker exec lumenly id → uid=101(nginx)`.
 - **Read-only root filesystem** (`read_only: true`) with writable `tmpfs` only
   where nginx needs it (`/tmp`, `/var/cache/nginx`, `/var/run`).
 - **`no-new-privileges:true`** — blocks setuid privilege escalation.
@@ -123,7 +123,7 @@ make audit     # npm dependency audit
 make up        # build + run the hardened container
 make headers   # assert security headers are present
 make scan      # Trivy image CVE scan (if installed)
-docker exec stellar-pay id   # confirm non-root (uid=101)
+docker exec lumenly id   # confirm non-root (uid=101)
 ```
 
 ---

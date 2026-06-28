@@ -1,8 +1,8 @@
-# Stellar Pay — developer & ops shortcuts
+# Lumenly — developer & ops shortcuts
 # Run `make` or `make help` to see all targets.
 
-IMAGE       := stellar-pay:latest
-CONTAINER   := stellar-pay
+IMAGE       := lumenly:latest
+CONTAINER   := lumenly
 COMPOSE     := docker compose
 PROD_PORT   := 8080
 DEV_PORT    := 5173
@@ -14,7 +14,7 @@ DEV_PORT    := 5173
 ## ---------------------------------------------------------------------------
 .PHONY: help
 help: ## Show this help
-	@echo "Stellar Pay — make targets:"
+	@echo "Lumenly — make targets:"
 	@grep -E '^[a-zA-Z0-9_-]+:.*?## .*$$' $(MAKEFILE_LIST) \
 		| awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-16s\033[0m %s\n", $$1, $$2}'
 
@@ -47,7 +47,7 @@ build: ## Build the production Docker image
 .PHONY: up
 up: ## Build & start the production container (http://localhost:$(PROD_PORT))
 	$(COMPOSE) up -d --build web
-	@echo "➜  Stellar Pay running at http://localhost:$(PROD_PORT)"
+	@echo "➜  Lumenly running at http://localhost:$(PROD_PORT)"
 
 .PHONY: down
 down: ## Stop and remove all containers

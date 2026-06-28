@@ -1,4 +1,4 @@
-# 🚀 Stellar Pay — Testnet Payment dApp
+# 🚀 Lumenly — Testnet Payment dApp
 
 > **Level 1 · White Belt submission** — a first working Stellar dApp on Testnet.
 
@@ -7,7 +7,7 @@ A minimal but polished payment dApp built on the **Stellar Testnet**. Connect th
 with clear success / failure feedback and a link to the transaction on the block
 explorer. No real funds are ever involved.
 
-![Stellar Pay screenshot](docs/screenshots/01-connected.png)
+![Lumenly screenshot](docs/screenshots/01-connected.png)
 
 ---
 

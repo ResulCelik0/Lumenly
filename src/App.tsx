@@ -13,7 +13,7 @@ export default function App() {
       <header className="topbar">
         <div className="brand">
           <img src="/stellar.svg" alt="" width={28} height={28} />
-          <span>Stellar Pay</span>
+          <span>Lumenly</span>
           <span className="badge badge--net">Testnet</span>
         </div>
 
